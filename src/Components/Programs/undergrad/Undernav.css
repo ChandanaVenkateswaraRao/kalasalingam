@@ -1,0 +1,31 @@
+.unav {
+    background-color: #e85624;
+    color: black;
+    margin-top: 80px;  
+    /* padding: 20px;     */
+    text-align: center;
+}
+
+
+.unav p{
+    display: inline-flex;
+    list-style: none;
+    margin: 3px 10px;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 30px; /* Moved here */
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+   
+}
+
+.unav p:hover{
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: translateY(-3px);
+    
+
+}

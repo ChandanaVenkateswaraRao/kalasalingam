@@ -1,0 +1,88 @@
+
+.btech-program-details {
+    
+    margin-top: 20px;
+    background-color: #192956;
+    color: white;
+
+
+}
+
+
+
+.btech-program-details-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+
+}
+.vision {
+    display: flex;
+   
+}
+
+.vision-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 30%;
+}
+
+.vision-img img{
+    border-radius: 40%;
+}
+.vision-main{
+    width: 70%;
+    
+}
+.vision p{
+    padding: 50px;
+    padding-bottom: 30px;
+    font-size: 30px;
+    font-weight: 400px;
+   
+
+}
+.vision p2  {
+    padding-left: 70px;
+    line-height: 40px;
+    display: flex;
+    justify-content: center;
+}
+.vision p::after {
+  content: '';
+  display: block;
+  width:  100px; /* or 100% */
+  height: 12px;
+  background: linear-gradient(to right, #e85624 50%,white 50%);
+  margin-top: 5px;
+  border-radius: 12px;
+}
+.overview-2 p{
+     padding: 30px;
+    padding-bottom: 30px;
+    font-size: 30px;
+    font-weight: 400px;
+   
+}
+
+.overview-2 p::after {
+  content: '';
+  display: block;
+  width:  130px; /* or 100% */
+  height: 12px;
+  background: linear-gradient(to right, #e85624 50%,white 50%);
+  margin-top: 5px;
+  border-radius: 12px;
+}
+
+
+.overview-2-text div p2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
