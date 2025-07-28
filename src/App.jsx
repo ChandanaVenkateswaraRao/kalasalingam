@@ -1,6 +1,6 @@
 // App.jsx
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom'; // Import Navigate
 
 import Navbar from './Components/Navbar/Navabar';
 import Hero from './Components/Hero/Hero';
@@ -18,46 +18,75 @@ const App = () => {
   const [playState, setPlayState] = useState(false);
   const location = useLocation();
 
-  // ✅ Disable right-click
-  useEffect(() => {
+  // ... your useEffect hooks ...
+    useEffect(() => {
+
     const handleContextMenu = (e) => e.preventDefault();
+
     document.addEventListener('contextmenu', handleContextMenu);
+
     return () => document.removeEventListener('contextmenu', handleContextMenu);
+
   }, []);
 
-  // ✅ Scroll to anchor with offset on route change
-  useEffect(() => {
-    const hash = window.location.hash;
-    if (hash) {
-      const scrollToAnchor = () => {
-        const element = document.querySelector(hash);
-        if (element) {
-          const yOffset = -80;
-          const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
-        }
-      };
 
-      let attempts = 0;
-      const interval = setInterval(() => {
-        if (document.querySelector(hash) || attempts > 10) {
-          scrollToAnchor();
-          clearInterval(interval);
+  // ✅ Scroll to anchor with offset on route change
+
+      useEffect(() => {
+
+        const hash = window.location.hash;
+
+        if (hash) {
+
+          const scrollToAnchor = () => {
+
+            const element = document.querySelector(hash);
+
+            if (element) {
+
+              const yOffset = -80;
+
+              const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+
+              window.scrollTo({ top: y, behavior: 'smooth' });
+
+            }
+
+          };
+
+
+          let attempts = 0;
+
+          const interval = setInterval(() => {
+
+            if (document.querySelector(hash) || attempts > 10) {
+
+              scrollToAnchor();
+
+              clearInterval(interval);
+
+            }
+
+            attempts++;
+
+          }, 100);
+
         }
-        attempts++;
-      }, 100);
-    }
-  }, [location]);
+
+      }, [location]);
 
   return (
     <>
       <Navbar />
       <Routes>
+        {/* ADD THIS LINE to redirect from "/" to "/home" */}
+        <Route path="/" element={<Navigate to="/home" />} />
+
         <Route
           path="/home"
           element={
             <div>
-              {/* Add id="hero" to enable scroll-to-anchor */}
+              {/* ... rest of your home page content ... */}
               <div id="hero"><Hero /></div>
               <div className="container">
                 <Title subtitle="Our Program" title="What we Offer" id="program" />
