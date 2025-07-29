@@ -41,14 +41,14 @@ const Btech = () => {
             <h1>B.Tech Programmes</h1>
         </div>
 
-        <div className='btechprogram' onClick={csefun} style={{
+        <div className='btechprogram' style={{
       
         marginTop: "40px",
         cursor: "pointer", // optional: gives visual feedback
         // optional: expands clickable area
         background: "#f5f5f5", // optional: for visibility
       }}>
-            <div className='program-sub' >
+            <div className='program-sub' onClick={csefun}  >
                 <h3>B.Tech-Computer Science and Engineering </h3>
                  <p>{cse ? "-" : "+"}</p>
 
